@@ -1,19 +1,18 @@
 
-
 import 'package:demo_server_driven_ui/constants/constants.dart';
 
-abstract class WidgetResolverMap{
-  static Map<String, WidgetResolver> _widgetResolvers = Map<String, WidgetResolver>();
+class DynamicWidgetHandlerRepo{
+  static final Map<String, DynamicWidgetHandler> _dynamicWidgetHandler = <String, DynamicWidgetHandler>{};
 
-  static void addWidgetResolver(String type, WidgetResolver widgetResolver){
-    _widgetResolvers[type] =  widgetResolver;
+  static void addDynamicWidgetHandler(String type, DynamicWidgetHandler widgetResolver){
+    _dynamicWidgetHandler[type] =  widgetResolver;
   }
 
-  static void removeWidgetResolver(String type){
-    _widgetResolvers.remove(type);
+  static void removeDynamicWidgetHandler(String type){
+    _dynamicWidgetHandler.remove(type);
   }
 
-  static WidgetResolver? getResolverForType(String type){
-    return _widgetResolvers[type];
+  static DynamicWidgetHandler? getDynamicWidgetHandlerForType(String type){
+    return _dynamicWidgetHandler[type];
   }
 }

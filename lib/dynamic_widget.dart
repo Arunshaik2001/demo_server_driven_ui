@@ -21,10 +21,10 @@ abstract class DynamicWidget {
   factory DynamicWidget.fromJson(Map<String, dynamic> json) {
     try {
       String type = json['type'];
-      WidgetResolver? widgetResolver =
-          WidgetResolverMap.getResolverForType(type);
-      if (widgetResolver != null && json.containsKey("data")) {
-        DynamicWidget widget = widgetResolver(json["data"]);
+      DynamicWidgetHandler? dynamicWidgetHandler =
+          DynamicWidgetHandlerRepo.getDynamicWidgetHandlerForType(type);
+      if (dynamicWidgetHandler != null && json.containsKey("data")) {
+        DynamicWidget widget = dynamicWidgetHandler(json["data"]);
         List<DynamicWidget?>? children = widget.childElements;
         children?.forEach((element) {
           element?.parent = widget;

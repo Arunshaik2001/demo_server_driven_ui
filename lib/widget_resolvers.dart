@@ -7,13 +7,13 @@ import 'package:demo_server_driven_ui/widgets/dy_text/dynamic_text.dart';
 class WidgetResolvers{
 
   static init(){
-    WidgetResolverMap.addWidgetResolver(
+    DynamicWidgetHandlerRepo.addDynamicWidgetHandler(
         "dy_container", (json) => DynamicContainer.fromJson(json));
-    WidgetResolverMap.addWidgetResolver(
+    DynamicWidgetHandlerRepo.addDynamicWidgetHandler(
         "dy_text", (json) => DynamicText.fromJson(json));
-    WidgetResolverMap.addWidgetResolver(
+    DynamicWidgetHandlerRepo.addDynamicWidgetHandler(
         "dy_column", (json) => DynamicColumn.fromJson(json));
-    WidgetResolverMap.addWidgetResolver(
+    DynamicWidgetHandlerRepo.addDynamicWidgetHandler(
         "dy_row", (json) => DynamicRow.fromJson(json));
   }
 }
