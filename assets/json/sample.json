@@ -1,0 +1,136 @@
+{
+  "type": "dy_container",
+  "data": {
+    "key": "22323",
+    "backgroundColor": "0xffff0000",
+    "height": 500,
+    "width": 300,
+    "padding": 20,
+    "alignment": "center",
+    "child": {
+      "type": "dy_column",
+      "data": {
+        "key": "223231",
+        "mainAxisAlignment": "spaceBetween",
+        "children": [
+          {
+            "type": "dy_container",
+            "data": {
+              "key": "22323423",
+              "backgroundColor": "0xffffffff",
+              "height": 200,
+              "width": 300,
+              "padding": 20,
+              "child": {
+                "type": "dy_column",
+                "data": {
+                  "key": "223456231",
+                  "mainAxisAlignment": "spaceBetween",
+                  "children": [
+                    {
+                      "type": "dy_text",
+                      "data": {
+                        "key": "22223233",
+                        "style": "header1",
+                        "text": "server"
+                      }
+                    },
+                    {
+                      "type": "dy_text",
+                      "data": {
+                        "key": "22678673234",
+                        "style": "header1",
+                        "text": "driven"
+                      }
+                    },
+                    {
+                      "type": "dy_text",
+                      "data": {
+                        "key": "2237567235",
+                        "style": "header1",
+                        "text": "ui"
+                      }
+                    },
+                    {
+                      "type": "dy_container",
+                      "data": {
+                        "key": "123353343",
+                        "backgroundColor": "0xffff0000",
+                        "padding": 10,
+                        "child": {
+                          "type": "dy_row",
+                          "data": {
+                            "key": "245231",
+                            "mainAxisAlignment": "spaceBetween",
+                            "children": [
+                              {
+                                "type": "dy_text",
+                                "data": {
+                                  "key": "223234233",
+                                  "style": "header1White",
+                                  "text": "row"
+                                }
+                              },
+                              {
+                                "type": "dy_text",
+                                "data": {
+                                  "key": "2236757234",
+                                  "style": "header1White",
+                                  "text": "using"
+                                }
+                              },
+                              {
+                                "type": "dy_text",
+                                "data": {
+                                  "key": "2237979235",
+                                  "style": "header1White",
+                                  "text": "json"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "type": "dy_text",
+            "data": {
+              "key": "2232443533",
+              "style": "header1",
+              "text": "server"
+            }
+          },
+          {
+            "type": "dy_text",
+            "data": {
+              "key": "2265673234",
+              "style": "header1",
+              "text": "is"
+            }
+          },
+          {
+            "type": "dy_text",
+            "data": {
+              "key": "2232789535",
+              "style": "header1",
+              "text": "sending"
+            }
+          },
+          {
+            "type": "dy_text",
+            "data": {
+              "key": "22308786235",
+              "style": "header1",
+              "text": "json"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
