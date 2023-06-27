@@ -4,7 +4,7 @@ import 'package:demo_server_driven_ui/widgets/dy_container/dynamic_container.dar
 import 'package:demo_server_driven_ui/widgets/dy_row/dynamic_row.dart';
 import 'package:demo_server_driven_ui/widgets/dy_text/dynamic_text.dart';
 
-class WidgetResolvers{
+class DynamicWidgetHandlers{
 
   static init(){
     DynamicWidgetHandlerRepo.addDynamicWidgetHandler(

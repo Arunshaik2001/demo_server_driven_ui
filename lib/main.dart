@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:demo_server_driven_ui/dynamic_widget.dart';
-import 'package:demo_server_driven_ui/widget_resolvers.dart';
+import 'package:demo_server_driven_ui/dynamic_widget_handlers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  WidgetResolvers.init();
+  DynamicWidgetHandlers.init();
   runApp(const MyApp());
 }
 
