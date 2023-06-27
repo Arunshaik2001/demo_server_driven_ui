@@ -34,5 +34,5 @@ class DynamicText extends DynamicWidget {
   }
 
   @override
-  List<DynamicWidget?>? get childElements => [];
+  List<DynamicWidget?>? get childWidgets => [];
 }

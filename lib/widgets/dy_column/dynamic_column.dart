@@ -47,5 +47,5 @@ class DynamicColumn extends DynamicWidget {
   }
 
   @override
-  List<DynamicWidget?>? get childElements => children ?? [];
+  List<DynamicWidget?>? get childWidgets => children ?? [];
 }

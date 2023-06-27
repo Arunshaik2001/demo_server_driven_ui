@@ -1,4 +1,4 @@
-import 'package:demo_server_driven_ui/widget_resolver_map.dart';
+import 'package:demo_server_driven_ui/dynamic_widget_handler_repo.dart';
 import 'package:demo_server_driven_ui/widgets/dy_column/dynamic_column.dart';
 import 'package:demo_server_driven_ui/widgets/dy_container/dynamic_container.dart';
 import 'package:demo_server_driven_ui/widgets/dy_row/dynamic_row.dart';

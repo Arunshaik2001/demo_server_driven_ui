@@ -50,5 +50,5 @@ class DynamicContainer extends DynamicWidget {
   }
 
   @override
-  List<DynamicWidget?>? get childElements => child == null ? [] : [child!];
+  List<DynamicWidget?>? get childWidgets => child == null ? [] : [child!];
 }

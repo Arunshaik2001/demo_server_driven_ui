@@ -1,5 +1,5 @@
 import 'package:demo_server_driven_ui/constants/constants.dart';
-import 'package:demo_server_driven_ui/widget_resolver_map.dart';
+import 'package:demo_server_driven_ui/dynamic_widget_handler_repo.dart';
 import 'package:demo_server_driven_ui/widgets/dy_container/dynamic_container.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -25,7 +25,7 @@ abstract class DynamicWidget {
           DynamicWidgetHandlerRepo.getDynamicWidgetHandlerForType(type);
       if (dynamicWidgetHandler != null && json.containsKey("data")) {
         DynamicWidget widget = dynamicWidgetHandler(json["data"]);
-        List<DynamicWidget?>? children = widget.childElements;
+        List<DynamicWidget?>? children = widget.childWidgets;
         children?.forEach((element) {
           element?.parent = widget;
         });
@@ -41,5 +41,5 @@ abstract class DynamicWidget {
     }
   }
 
-  List<DynamicWidget?>? get childElements;
+  List<DynamicWidget?>? get childWidgets;
 }
