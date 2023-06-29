@@ -3,6 +3,7 @@
 A new Flutter project showing you server-driven UI implementation.
 
 It demonstrates the challenges faced during implementing this technique.
+
 [x] Dynamic widgets creation.
 
 [] navigation between dynamic screens.
