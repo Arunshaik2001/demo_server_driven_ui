@@ -2,7 +2,7 @@
   "type": "dy_screen",
   "data": {
     "key": "123456",
-    "pageTitle": "Flutter Server UI screen 2",
+    "pageTitle": "Flutter Server UI screen 1",
     "child": {
       "type": "dy_container",
       "data": {
@@ -21,6 +21,7 @@
                 "data": {
                   "key": "22323423",
                   "backgroundColor": "0xffffffff",
+                  "width": 300,
                   "padding": 20,
                   "child": {
                     "type": "dy_column",
@@ -41,7 +42,7 @@
                           "data": {
                             "key": "22678673234",
                             "style": "header1",
-                            "text": "second"
+                            "text": "first"
                           }
                         },
                         {
@@ -50,26 +51,6 @@
                             "key": "2237567235",
                             "style": "header1",
                             "text": "screen"
-                          }
-                        },
-                        {
-                          "type": "dy_container",
-                          "data": {
-                            "key": "22223233645",
-                            "child": {
-                              "type": "dy_text_field",
-                              "data": {
-                                "key": "2222323364",
-                                "initialText": ""
-                              }
-                            }
-                          }
-                        },
-                        {
-                          "type": "dy_text_field",
-                          "data": {
-                            "key": "222232336",
-                            "initialText": ""
                           }
                         },
                         {
@@ -87,16 +68,15 @@
                                   "data": {
                                     "key": "2237567235",
                                     "style": "header1",
-                                    "text": "submit inputs"
+                                    "text": "go to second screen"
                                   }
                                 },
                                 "event": {
-                                  "actionString": "/form",
+                                  "actionString": "/moveToScreen",
                                   "extras": {
-                                    "data": {
-                                      "name": "arun",
-                                      "place": "india"
-                                    }
+                                    "url": "assets/json/sample.json",
+                                    "urlType": "local",
+                                    "navigationType": "replace"
                                   }
                                 }
                               }

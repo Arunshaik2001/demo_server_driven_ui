@@ -15,6 +15,7 @@ DynamicContainer _$DynamicContainerFromJson(Map<String, dynamic> json) {
     key: json['key'] as String?,
     backgroundColor: json['backgroundColor'] as String?,
     padding: (json['padding'] as num?)?.toDouble(),
+    margin: (json['margin'] as num?)?.toDouble(),
     height: (json['height'] as num?)?.toDouble(),
     width: (json['width'] as num?)?.toDouble(),
     child: json['child'] == null

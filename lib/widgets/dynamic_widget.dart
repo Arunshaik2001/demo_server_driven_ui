@@ -1,5 +1,5 @@
 import 'package:demo_server_driven_ui/constants/constants.dart';
-import 'package:demo_server_driven_ui/dynamic_widget_handler_repo.dart';
+import 'package:demo_server_driven_ui/repos/dynamic_widget_handler_repo.dart';
 import 'package:demo_server_driven_ui/widgets/dy_container/dynamic_container.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -14,9 +14,7 @@ abstract class DynamicWidget {
 
   DynamicWidget({required this.key, this.parent});
 
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  Widget build(BuildContext context);
 
   factory DynamicWidget.fromJson(Map<String, dynamic> json) {
     try {

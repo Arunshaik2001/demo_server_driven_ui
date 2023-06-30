@@ -1,6 +1,6 @@
 import 'package:demo_server_driven_ui/utils/widget_util.dart';
 import 'package:flutter/material.dart';
-import 'package:demo_server_driven_ui/dynamic_widget.dart';
+import 'package:demo_server_driven_ui/widgets/dynamic_widget.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'dynamic_container.g.dart';
@@ -12,6 +12,7 @@ part 'dynamic_container.g.dart';
 class DynamicContainer extends DynamicWidget {
   String? backgroundColor;
   double? padding;
+  double? margin;
   double? height;
   double? width;
   DynamicWidget? child;
@@ -22,6 +23,7 @@ class DynamicContainer extends DynamicWidget {
     String? key,
     this.backgroundColor,
     this.padding,
+    this.margin,
     this.height,
     this.width,
     this.child,
@@ -40,6 +42,7 @@ class DynamicContainer extends DynamicWidget {
       color:
           backgroundColor != null ? Color(int.parse(backgroundColor!)) : null,
       padding: padding != null ? EdgeInsets.all(padding!) : EdgeInsets.zero,
+      margin: margin != null ? EdgeInsets.all(margin!) : EdgeInsets.zero,
       height: height,
       width: width,
       alignment: alignment ?? Alignment.center,

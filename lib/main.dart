@@ -1,11 +1,16 @@
 import 'dart:convert';
-import 'package:demo_server_driven_ui/dynamic_widget.dart';
-import 'package:demo_server_driven_ui/dynamic_widget_handlers.dart';
+import 'package:demo_server_driven_ui/widgets/dynamic_widget.dart';
+import 'package:demo_server_driven_ui/repos/action_handlers_repo.dart';
+import 'package:demo_server_driven_ui/action_handlers/action_handler.dart';
+import 'package:demo_server_driven_ui/widgets/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'dynamic_widget/dynamic_widget_handlers.dart';
+
 void main() {
   DynamicWidgetHandlers.init();
+  ActionHandlersRepo.init();
   runApp(const MyApp());
 }
 
@@ -34,7 +39,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  DynamicWidget? dynamicWidget;
+  Map<String, dynamic>? jsonWidget;
 
   @override
   void initState() {
@@ -43,27 +48,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void loadJson() async {
-    final String data = await rootBundle.loadString('assets/json/sample.json');
+    final String data = await rootBundle.loadString('assets/json/sample1.json');
     final Map<String, dynamic> json = jsonDecode(data);
-    dynamicWidget = DynamicWidget.fromJson(json);
+    jsonWidget = json;
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (dynamicWidget != null)
-                dynamicWidget!.build(context)
-            ],
-          ),
-        ) // This trailing comma makes auto-formatting nicer for build methods.
-        );
+    ActionHandlersRepo.context = context;
+    if (jsonWidget != null) {
+      return DynamicView(json: jsonWidget!);
+    }
+    return const SizedBox.shrink();
   }
 }

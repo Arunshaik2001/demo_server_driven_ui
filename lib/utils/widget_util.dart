@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:demo_server_driven_ui/constants/text_styles.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 
 class WidgetUtil {
   static Alignment? getPositionalAlignment(String? alignment) {
@@ -72,5 +75,11 @@ class WidgetUtil {
       }
     }
     return null;
+  }
+
+  static Future<Map<String, dynamic>> loadJson(path) async {
+    final String data = await rootBundle.loadString(path);
+    final Map<String, dynamic> json = jsonDecode(data);
+    return json;
   }
 }

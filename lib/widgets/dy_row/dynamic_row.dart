@@ -1,6 +1,6 @@
 import 'package:demo_server_driven_ui/utils/widget_util.dart';
 import 'package:flutter/material.dart';
-import 'package:demo_server_driven_ui/dynamic_widget.dart';
+import 'package:demo_server_driven_ui/widgets/dynamic_widget.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'dynamic_row.g.dart';
