@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void loadJson() async {
-    final String data = await rootBundle.loadString('assets/json/sample1.json');
+    final String data = await rootBundle.loadString('assets/json/sample.json');
     final Map<String, dynamic> json = jsonDecode(data);
     jsonWidget = json;
     setState(() {});
