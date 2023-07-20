@@ -68,7 +68,7 @@
                                   "data": {
                                     "key": "buttonTextKey",
                                     "style": "header1",
-                                    "text": "go to second screen"
+                                    "text": "update text"
                                   }
                                 },
                                 "event": {
