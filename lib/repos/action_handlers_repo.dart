@@ -1,3 +1,4 @@
+import 'package:demo_server_driven_ui/action_handlers/update_widget_handler/update_widget_action_handler.dart';
 import 'package:demo_server_driven_ui/dtos/action_dto.dart';
 import 'package:demo_server_driven_ui/widgets/dynamic_widget.dart';
 import 'package:demo_server_driven_ui/action_handlers/form_action_handler/form_action_handler.dart';
@@ -7,6 +8,7 @@ import 'package:demo_server_driven_ui/action_handlers/action_handler.dart';
 
 final RegExp _MOVE_TO_SCREEN = RegExp(r'(^/?moveToScreen/?$)');
 final RegExp _FORM = RegExp(r'(^/?form/?$)');
+final RegExp _UPDATE_TO_WIDGET = RegExp(r'(^/?updateWidget/?$)');
 
 class ActionHandlersRepo {
   static Map<RegExp, ActionHandler> handlers = Map();
@@ -19,6 +21,7 @@ class ActionHandlersRepo {
   static void init() {
     _registerHandler(_MOVE_TO_SCREEN, MoveToScreenActorHandler());
     _registerHandler(_FORM, FormActionHandler());
+    _registerHandler(_UPDATE_TO_WIDGET, UpdateWidgetActionHandler());
   }
 
   static void handle(ActionDTO actionDTO, DynamicWidget widget) {
@@ -28,10 +31,8 @@ class ActionHandlersRepo {
       handlers.forEach((key, handler) {
         if (!hasMatched) {
           if (key.hasMatch(action.path)) {
-            Map<String, dynamic> extras = {
-              "_instance": widget
-            };
-            if(actionDTO.extras != null) {
+            Map<String, dynamic> extras = {"_instance": widget};
+            if (actionDTO.extras != null) {
               extras.addAll(actionDTO.extras!);
             }
             handler.handleAction(context, action, extras);

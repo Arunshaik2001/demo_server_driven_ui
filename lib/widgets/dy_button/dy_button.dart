@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:demo_server_driven_ui/widgets/dynamic_widget.dart';
 import 'package:demo_server_driven_ui/action_handlers/action_handler.dart';
 import 'package:demo_server_driven_ui/repos/action_handlers_repo.dart';
@@ -15,7 +17,8 @@ class DynamicButton extends DynamicWidget {
   DynamicWidget child;
   ActionDTO? action;
 
-  DynamicButton({String? key, required this.child, this.action}) : super(key: key);
+  DynamicButton({String? key, required this.child, this.action})
+      : super(key: key);
 
   @override
   List<DynamicWidget?>? get childWidgets => [child];
@@ -27,7 +30,7 @@ class DynamicButton extends DynamicWidget {
   Widget build(BuildContext context) {
     return TextButton(
         onPressed: () {
-          if(action != null){
+          if (action != null) {
             ActionHandlersRepo.handle(action!, this);
           }
         },
@@ -36,4 +39,6 @@ class DynamicButton extends DynamicWidget {
         ));
   }
 
+  @override
+  FutureOr invokeMethod(String methodName, {Map<String, dynamic>? params}) {}
 }

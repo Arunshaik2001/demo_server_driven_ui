@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:demo_server_driven_ui/utils/widget_util.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_server_driven_ui/widgets/dynamic_widget.dart';
@@ -54,4 +56,7 @@ class DynamicContainer extends DynamicWidget {
 
   @override
   List<DynamicWidget?>? get childWidgets => child == null ? [] : [child!];
+
+  @override
+  FutureOr invokeMethod(String methodName, {Map<String, dynamic>? params}) {}
 }

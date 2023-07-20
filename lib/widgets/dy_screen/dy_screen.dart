@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:demo_server_driven_ui/widgets/form_widget/form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_server_driven_ui/widgets/dynamic_widget.dart';
@@ -97,4 +99,7 @@ class DynamicScreen extends DynamicWidget implements FormWidget {
       return true;
     }
   }
+
+  @override
+  FutureOr invokeMethod(String methodName, {Map<String, dynamic>? params}) {}
 }

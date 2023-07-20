@@ -66,17 +66,19 @@
                                 "child": {
                                   "type": "dy_text",
                                   "data": {
-                                    "key": "2237567235",
+                                    "key": "buttonTextKey",
                                     "style": "header1",
                                     "text": "go to second screen"
                                   }
                                 },
                                 "event": {
-                                  "actionString": "/moveToScreen",
+                                  "actionString": "/updateWidget",
                                   "extras": {
-                                    "url": "assets/json/sample.json",
-                                    "urlType": "local",
-                                    "navigationType": "replace"
+                                    "widgetKey": "buttonTextKey",
+                                    "methodName": "UPDATE_TEXT",
+                                    "params": {
+                                      "newText": "updated text"
+                                    }
                                   }
                                 }
                               }

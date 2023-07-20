@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:demo_server_driven_ui/widgets/dynamic_provider.dart';
 import 'package:demo_server_driven_ui/widgets/dynamic_widget.dart';
 import 'package:demo_server_driven_ui/repos/action_handlers_repo.dart';
 import 'package:demo_server_driven_ui/action_handlers/action_handler.dart';
@@ -58,7 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     ActionHandlersRepo.context = context;
     if (jsonWidget != null) {
-      return DynamicView(json: jsonWidget!);
+      return DynamicProvider(DynamicWidget.fromJson(jsonWidget!))
+          .build(context);
     }
     return const SizedBox.shrink();
   }

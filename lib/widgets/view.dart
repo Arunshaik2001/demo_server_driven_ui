@@ -3,16 +3,20 @@ import 'package:demo_server_driven_ui/widgets/form_widget/form_widget.dart';
 import 'package:flutter/material.dart';
 
 class DynamicView extends StatelessWidget {
-  Map<String, dynamic> json;
+  Map<String, dynamic>? json;
+  DynamicWidget? child;
 
-  DynamicView({Key? key, required this.json}) : super(key: key);
+  DynamicView({Key? key, this.json, this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    DynamicWidget dynamicWidget = DynamicWidget.fromJson(json);
-    Widget widget = dynamicWidget.build(context);
+    DynamicWidget? widget =  child;
+    if(child == null){
+      widget = DynamicWidget.fromJson(json!);
+    }
+
     return Container(
-      child: widget,
+      child: widget!.build(context),
     );
   }
 }

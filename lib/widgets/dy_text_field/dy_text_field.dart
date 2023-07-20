@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:demo_server_driven_ui/widgets/dynamic_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -50,4 +52,7 @@ class DynamicTextField extends DynamicWidget implements FormWidget {
     }
     return false;
   }
+
+  @override
+  FutureOr invokeMethod(String methodName, {Map<String, dynamic>? params}) {}
 }

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:demo_server_driven_ui/constants/constants.dart';
 import 'package:demo_server_driven_ui/repos/dynamic_widget_handler_repo.dart';
 import 'package:demo_server_driven_ui/widgets/dy_container/dynamic_container.dart';
@@ -38,6 +40,11 @@ abstract class DynamicWidget {
       return DynamicContainer(width: 0.0);
     }
   }
+
+  FutureOr<dynamic> invokeMethod(
+    String methodName, {
+    Map<String, dynamic>? params,
+  });
 
   List<DynamicWidget?>? get childWidgets;
 }
